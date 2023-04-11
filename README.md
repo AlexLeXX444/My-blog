@@ -10,6 +10,7 @@
     Thymeleaf
     Lombok
     PostgreSQL JDBC Driver
+    Bootstrap 4
 
 База данных PostgreSQL.
 
