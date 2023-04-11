@@ -1,11 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Title</title>
-    <header th:insert="~{fragments/stylelinks :: styles}"></header>
-</head>
-<body>
-    <header th:insert="~{fragments/base_header :: baseheader}"></header>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>Title</title>
+
+        <!-- Stylesheets list-->
+        <meta th:insert="~{fragments/stylelinks :: styles}"></meta>
+    </head>
+    <body>
+        <!-- Header Start -->
+        <header th:insert="~{fragments/base_header :: baseheader}"></header>
+
+
+
+        <!-- Scripts list-->
+        <meta th:insert="~{fragments/scripts :: scripts-list}"></meta>
+    </body>
 </html>
