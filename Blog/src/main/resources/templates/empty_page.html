@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Main</title>
+
+        <!-- Stylesheets list-->
+        <meta th:insert="~{fragments/stylelinks :: styles}"/>
+    </head>
+    <body>
+        <!-- Header Start -->
+        <header th:insert="~{fragments/base_header :: baseheader}"></header>
+
+        <!-- Footer Start -->
+        <footer th:insert="~{fragments/base_footer :: basefooter}"></footer>
+
+        <!-- Scripts list-->
+        <meta th:insert="~{fragments/scripts :: scripts-list}"/>
+    </body>
+</html>
