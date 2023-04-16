@@ -10,4 +10,9 @@ public class PageController {
     public String indexPage() {
         return "index";
     }
+
+    @GetMapping("/user_login")
+    public String userLoginPage() {
+        return "users/user_login";
+    }
 }
