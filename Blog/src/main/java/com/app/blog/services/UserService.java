@@ -18,7 +18,7 @@ public class UserService {
         [a-zA-Z0-9_-] состоит из букв латиницы в нижнем и верхнем регистре, также включает цифры и спец сиволы тире и нижнего подчеркивания;
         {6,19} имеет длинну от 6 до 20 символов без пробелов и табуляции.
      */
-    private final String patternForLogin = "^[a-zA-Z][a-zA-Z0-9_-]{6,19}$";
+    private final String patternForLogin = "^[a-zA-Z][a-zA-Z0-9_-]{5,19}$";
     /*
     Описание паттерна пароля пользователя:
         (?=.*[0-9]) должен иметь хотя бы одну цыфру;
@@ -28,7 +28,7 @@ public class UserService {
         (?=\\S+$) никаких пробелов и табуляции;
         {8,25} длинна от 8 до 25 символов.
     */
-    private final String patternForPassword = "(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@#$%^&+=])(?=\\S+$).{8,25}";
+    private final String patternForPassword = "^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=\\S+$).{8,20}$";
 
     /*
     Описания паттерна EMail-адреса пользователя:
@@ -39,21 +39,23 @@ public class UserService {
         так же допускиется единсвенный спецсимвол точка, как разделитель (никаких последоватеьных точек).
 
     Ограничения для доменной части (после знака @):
-        [A-Za-z0-9-] состоит с латинских символов в верхнем или нижнем регистре, цифр и может включать спец символ тире;
+        [A-Za-z0-9-] состоит из латинских символов в верхнем или нижнем регистре, цифр и может включать спец символ тире;
         [A-Za-z] домен (после знака точка) может состоять только из латинских символов в верхнем или нижнем регистре;
         {2,64} длинна не менее 2 и не более 64 символов.
     */
-    private final String patternForEMail = "^(?=.{1,64}@)[A-Za-z0-9]+(\\\\.[A-Za-z0-9_-]+)*@[^-][A-Za-z0-9-]+(\\\\.[A-Za-z0-9-]+)*(\\\\.[A-Za-z]{2,64})$";
+    private final String patternForEMail = "\\w+([\\.-]?\\w+)*@\\w+([\\.-]?\\w+)*\\.\\w{2,4}";
 
     public int registerNew(User user) {
-        if (user.getLogin().length() != 0 && user.getPassword().length() != 0 && user.getEMail().length() != 0) {
+        System.out.println(user.toString());
+        if (user.getLogin().length() != 0 && user.getPassword().length() != 0 && user.getEmail().length() != 0) {
+
             if (validatePattern(user.getLogin(), this.patternForLogin)) {
                 return 1;
             }
             if (validatePattern(user.getPassword(), this.patternForPassword)) {
                 return 2;
             }
-            if (validatePattern(user.getEMail(), this.patternForEMail)) {
+            if (validatePattern(user.getEmail(), this.patternForEMail)) {
                 return 3;
             }
             userRepository.save(user);

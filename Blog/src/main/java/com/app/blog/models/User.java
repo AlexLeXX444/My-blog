@@ -25,8 +25,14 @@ public class User {
     private String password;
 
     @Column(name = "user_email")
-    private String eMail;
+    private String email;
 
     @Column(name = "user_registration_date")
     private LocalDate registrationDate = LocalDate.now();
+
+    public User(String login, String password, String email) {
+        this.login = login;
+        this.password = password;
+        this.email = email;
+    }
 }

@@ -37,8 +37,23 @@ public class UserController {
         };
     }
 
-    @GetMapping("/user/registration/success_register")
+    @GetMapping("/user/success_register")
     public String userRegistrationSuccessPage() {
         return "users/success";
+    }
+
+    @GetMapping("/user/error_login")
+    public String userRegistrationErrorLoginPage() {
+        return "users/error_login";
+    }
+
+    @GetMapping("/user/error_password")
+    public String userRegistrationErrorPasswordPage() {
+        return "users/error_password";
+    }
+
+    @GetMapping("/user/error_email")
+    public String userRegistrationErrorEmailPage() {
+        return "users/error_email";
     }
 }
