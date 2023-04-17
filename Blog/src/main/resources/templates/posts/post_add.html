@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Post add</title>
+
+        <!-- Stylesheets list-->
+        <meta th:insert="~{fragments/stylelinks :: styles}"/>
+    </head>
+    <body>
+        <!-- Header Start -->
+        <header th:insert="~{fragments/base_header :: baseheader}"></header>
+
+        <div class="container p-5">
+            <form role="form" method="post" th:action="@{/blog/post/add}" th:object="${post}">
+                <div class="form-group">
+                    <label for="exampleInputUserName1">Теги:</label>
+                    <input type="text" class="form-control"  id="exampleInputUserName1" th:field="*{tag}">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputPassword1">Заголовок:</label>
+                    <input type="text" class="form-control" id="exampleInputPassword1" th:field="*{title}">
+                </div>
+                <div class="form-group">
+                    <label for="exampleInputEmail1">Содержание:</label>
+                    <input type="text" class="form-text" id="exampleInputEmail1" th:field="*{content}">
+                </div>
+                <button type="submit" class="btn btn-danger">Добавить</button>
+            </form>
+        </div>
+
+        <!-- Footer Start -->
+        <footer th:insert="~{fragments/base_footer :: basefooter}"></footer>
+
+        <!-- Scripts list-->
+        <meta th:insert="~{fragments/scripts :: scripts-list}"/>
+    </body>
+</html>
