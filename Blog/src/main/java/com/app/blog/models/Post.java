@@ -5,9 +5,6 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.ArrayList;
-import java.util.List;
-
 @Entity
 @Table(name = "posts")
 @Data
@@ -19,9 +16,8 @@ public class Post {
     @Column(name = "post_id")
     private long id;
 
-    @OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "post")
     @Column(name = "post_tags")
-    private List<PostTag> tags = new ArrayList<>();
+    private String tag;
 
     @Column(name = "post_tytle")
     private String title;

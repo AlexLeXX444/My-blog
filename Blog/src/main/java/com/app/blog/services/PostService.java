@@ -2,18 +2,22 @@ package com.app.blog.services;
 
 import com.app.blog.models.Post;
 import com.app.blog.repositorys.PostRepository;
-import com.app.blog.repositorys.PostTagRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+
+import java.util.List;
 
 @Service
 @RequiredArgsConstructor
 public class PostService {
     private final PostRepository postRepository;
-    private final PostTagRepository postTagRepository;
+
+    public List<Post> getAllPosts() {
+        return postRepository.findAll();
+    }
 
     public boolean addNewPost(Post post) {
         postRepository.save(post);
-        return false;
+        return true;
     }
 }
