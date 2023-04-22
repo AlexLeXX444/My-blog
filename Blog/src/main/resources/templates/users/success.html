@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>Success</title>
+
+        <!-- Stylesheets list-->
+        <meta th:insert="~{fragments/stylelinks :: styles}"/>
+    </head>
+    <body>
+        <!-- Header Start -->
+        <header th:insert="~{fragments/base_header :: baseheader}"></header>
+
+        <section class="section service border-top">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-7 text-center">
+                        <div class="section-title">
+                            <span class="h4 text-color">Успешно!</span>
+                            <h2 class="mt-3 content-title ">Теперь Вам доступны следующие функции:</h2>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="service-item mb-5">
+                            <i class="ti-desktop"></i>
+                            <h4 class="mb-3">Просмотр статей.</h4>
+                            <p>Доступ ко всем публикациям в разделе "Блог".</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="service-item mb-5">
+                            <i class="ti-layers"></i>
+                            <h4 class="mb-3">Предложить новость.</h4>
+                            <p>Вы можете оставить предложение или ссылки на адаптацию контента.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-4 col-md-6 col-sm-6">
+                        <div class="service-item mb-5">
+                            <i class="ti-pencil-alt"></i>
+                            <h4 class="mb-3">Оставлять комментарии.</h4>
+                            <p>Оставлять комментарии к статьям и другим материалам на сайте.</p>
+                        </div>
+                    </div>
+                </div>
+                <br>
+                <div class="col text-center">
+                    <a type="button" th:href="@{/user/login}" class="btn btn-primary" >Войти</a>
+                </div>
+            </div>
+        </section>
+
+
+
+        <!-- Footer Start -->
+        <footer th:insert="~{fragments/base_footer :: basefooter}"></footer>
+
+        <!-- Scripts list-->
+        <meta th:insert="~{fragments/scripts :: scripts-list}"/>
+    </body>
+</html>
